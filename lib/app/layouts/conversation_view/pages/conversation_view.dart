@@ -86,7 +86,7 @@ class ConversationViewState extends OptimizedState<ConversationView> {
             onSurface: ss.settings.monetTheming.value == Monet.full
                 ? null
                 : (context.theme.extensions[BubbleColors] as BubbleColors?)?.onReceivedBubbleColor,
-            outline: controller.backgroundPoster.value != null ? Colors.white : null,
+            outline: controller.backgroundPoster.value != null && !ss.settings.hideConversationBackgrounds.value ? Colors.white : null,
           ),
         ),
         child: PopScope(
@@ -146,7 +146,7 @@ class ConversationViewState extends OptimizedState<ConversationView> {
                     child: Stack(
                       clipBehavior: Clip.none,
                       children: [
-                        if (controller.backgroundPoster.value != null)
+                        if (controller.backgroundPoster.value != null && !ss.settings.hideConversationBackgrounds.value)
                         ImagePoster(poster: controller.backgroundPoster.value!.poster, images: controller.images),
                         const Positioned.fill(child: ScreenEffectsWidget()),
                         Column(

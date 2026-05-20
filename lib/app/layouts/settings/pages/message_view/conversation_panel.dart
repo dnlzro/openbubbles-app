@@ -100,6 +100,18 @@ class _ConversationPanelState extends OptimizedState<ConversationPanel> {
                         backgroundColor: tileColor,
                         isThreeLine: true,
                       )),
+                  const SettingsDivider(padding: EdgeInsets.only(left: 16.0)),
+                  Obx(() => SettingsSwitch(
+                        onChanged: (bool val) {
+                          ss.settings.hideConversationBackgrounds.value = val;
+                          saveSettings();
+                        },
+                        initialVal: ss.settings.hideConversationBackgrounds.value,
+                        title: "Hide Conversation Backgrounds",
+                        subtitle: "Hides custom chat backgrounds set by you or the other participant",
+                        backgroundColor: tileColor,
+                        isThreeLine: true,
+                      )),
                   if (!kIsWeb && !kIsDesktop)
                     const SettingsDivider(padding: EdgeInsets.only(left: 16.0)),
                   if (!kIsWeb && !kIsDesktop)

@@ -37,6 +37,7 @@ class Settings {
   final RxBool colorfulAvatars = false.obs;
   final RxBool colorfulBubbles = false.obs;
   final RxBool hideDividers = false.obs;
+  final RxBool hideConversationBackgrounds = false.obs;
   final RxDouble scrollVelocity = 1.00.obs;
   final RxBool sendWithReturn = false.obs;
   final RxBool doubleTapForDetails = false.obs;
@@ -318,6 +319,7 @@ class Settings {
       'colorfulAvatars': colorfulAvatars.value,
       'colorfulBubbles': colorfulBubbles.value,
       'hideDividers': hideDividers.value,
+      'hideConversationBackgrounds': hideConversationBackgrounds.value,
       'scrollVelocity': scrollVelocity.value,
       'sendWithReturn': sendWithReturn.value,
       'doubleTapForDetails': doubleTapForDetails.value,
@@ -485,6 +487,7 @@ class Settings {
     ss.settings.colorfulAvatars.value = map['colorfulAvatars'] ?? false;
     ss.settings.colorfulBubbles.value = map['colorfulBubbles'] ?? false;
     ss.settings.hideDividers.value = map['hideDividers'] ?? false;
+    ss.settings.hideConversationBackgrounds.value = map['hideConversationBackgrounds'] ?? false;
     ss.settings.scrollVelocity.value = map['scrollVelocity']?.toDouble() ?? 1;
     ss.settings.sendWithReturn.value = map['sendWithReturn'] ?? false;
     ss.settings.doubleTapForDetails.value = map['doubleTapForDetails'] ?? false;
@@ -656,6 +659,7 @@ class Settings {
     s.colorfulAvatars.value = map['colorfulAvatars'] ?? false;
     s.colorfulBubbles.value = map['colorfulBubbles'] ?? false;
     s.hideDividers.value = map['hideDividers'] ?? false;
+    s.hideConversationBackgrounds.value = map['hideConversationBackgrounds'] ?? false;
     s.scrollVelocity.value = map['scrollVelocity']?.toDouble() ?? 1;
     s.sendWithReturn.value = map['sendWithReturn'] ?? false;
     s.doubleTapForDetails.value = map['doubleTapForDetails'] ?? false;
